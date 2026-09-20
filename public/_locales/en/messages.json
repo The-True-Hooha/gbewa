@@ -1,0 +1,57 @@
+{
+  "extensionName": { "message": "Gbewa Media Grabber", "description": "Extension name" },
+  "extensionDescription": {
+    "message": "Pick any image or video on a page and download it at its best available quality.",
+    "description": "Extension description"
+  },
+  "popupArmButton": { "message": "Pick one thing", "description": "Tooltip for the single-item picker toggle" },
+  "popupDisarmButton": { "message": "Stop picking", "description": "Tooltip for the single-item picker toggle while armed" },
+  "popupArmedHint": {
+    "message": "Click any image or video on the page",
+    "description": "Hint shown while picker is armed"
+  },
+  "popupSettingsLink": { "message": "Settings", "description": "Link to options page" },
+  "popupHistoryLink": { "message": "Downloads", "description": "Link to chrome://downloads" },
+  "popupUnavailable": {
+    "message": "Can't scan this page",
+    "description": "Shown when the content script isn't available on the active tab"
+  },
+  "popupScanning": { "message": "Scanning…", "description": "Shown while the page is being scanned" },
+  "popupEmptyTitle": { "message": "Nothing to grab yet", "description": "Empty state title" },
+  "popupEmptyBody": {
+    "message": "This page hasn't loaded any media we can save. Keep scrolling — gbewa picks up lazy-loaded files the moment they appear.",
+    "description": "Empty state body"
+  },
+  "popupScanAgain": { "message": "Scan again", "description": "Rescan button" },
+  "popupSelectAll": { "message": "Select all", "description": "Select-all checkbox label" },
+  "popupSortLargest": { "message": "Largest first", "description": "Sort option" },
+  "popupSortSmallest": { "message": "Smallest first", "description": "Sort option" },
+  "popupSortName": { "message": "Name", "description": "Sort option" },
+  "popupFilterAll": { "message": "All", "description": "Filter tab" },
+  "popupFilterImages": { "message": "Images", "description": "Filter tab" },
+  "popupFilterVideo": { "message": "Video", "description": "Filter tab" },
+  "popupFilterAudio": { "message": "Audio", "description": "Filter tab" },
+  "popupDownloadButton": { "message": "Download", "description": "Batch download button" },
+  "popupSavesTo": { "message": "saves to", "description": "Prefix before the download folder name" },
+  "popupPause": { "message": "Pause", "description": "Pause the active batch" },
+  "popupResume": { "message": "Resume", "description": "Resume a paused batch" },
+  "popupOpenFolder": { "message": "Open folder", "description": "Reveal the last downloaded file" },
+  "popupDone": { "message": "Done", "description": "Dismiss a finished batch" },
+  "popupShortcutHint": {
+    "message": "Press ⌥G to open gbewa on any page",
+    "description": "Footer hint on the empty state"
+  },
+  "optionsHeading": { "message": "Settings", "description": "Options page header" },
+  "optionsThemeLabel": { "message": "Theme", "description": "Theme setting label" },
+  "optionsThemeLight": { "message": "Light", "description": "Light theme option" },
+  "optionsThemeDark": { "message": "Dark", "description": "Dark theme option" },
+  "optionsThemeSystem": { "message": "System", "description": "System theme option" },
+  "optionsNotificationsLabel": {
+    "message": "Notify me when a download finishes",
+    "description": "Notifications setting label"
+  },
+  "drmBlockedReason": {
+    "message": "This video is protected (DRM) and can't be downloaded.",
+    "description": "Shown when a candidate is DRM-protected"
+  }
+}
