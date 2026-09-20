@@ -1,0 +1,569 @@
+:root[data-theme='light'] {
+  --bg: #fffaf6;
+  --fg: #1c1a17;
+  --fg-muted: #6b6259;
+  --border: #ece4da;
+  --accent: #e8541f;
+  --accent-gradient: linear-gradient(135deg, #ff7a3d, #ff2f8e);
+  --card-bg: #ffffff;
+  --error: #d93025;
+  --success: #1a7f4e;
+}
+
+:root[data-theme='dark'] {
+  --bg: #161311;
+  --fg: #f3ede6;
+  --fg-muted: #a89e93;
+  --border: #332c26;
+  --accent: #ff7a3d;
+  --accent-gradient: linear-gradient(135deg, #ff7a3d, #ff2f8e);
+  --card-bg: #201c19;
+  --error: #ff6b6b;
+  --success: #4ade91;
+}
+
+body {
+  width: 23rem;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 0.85rem;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  max-height: 32rem;
+}
+
+.popup h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* header */
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.popup-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popup-brand-icon {
+  border-radius: 7px;
+}
+
+.popup-brand-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.popup-version-badge {
+  font-size: 0.65rem;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  padding: 0.1rem 0.4rem;
+  border-radius: 1rem;
+}
+
+.popup-header-actions {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.popup-icon-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--fg-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.popup-icon-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.popup-icon-button-active {
+  color: #fff;
+  background: var(--accent-gradient);
+  border-color: transparent;
+}
+
+/* hints / job / loading */
+
+.popup-hint,
+.popup-job {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  margin: 0.75rem 1rem 0;
+}
+
+.popup-job-failed {
+  color: var(--error);
+}
+
+.popup-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2.5rem 1rem;
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+}
+
+.popup-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: popup-spin 0.7s linear infinite;
+}
+
+@keyframes popup-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* site summary */
+
+.popup-site-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.85rem 1rem 0;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+}
+
+.popup-site-favicon,
+.popup-site-favicon-placeholder {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+
+.popup-site-favicon-placeholder {
+  background: var(--accent-gradient);
+}
+
+.popup-site-text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.popup-site-hostname {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popup-site-meta {
+  margin: 0.1rem 0 0;
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.popup-site-status {
+  color: var(--success);
+}
+
+/* filter tabs */
+
+.popup-filter-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.75rem 1rem 0;
+  overflow-x: auto;
+}
+
+.popup-filter-tab {
+  padding: 0.35rem 0.7rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--fg-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.popup-filter-tab-active {
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: transparent;
+}
+
+.popup-filter-count {
+  opacity: 0.75;
+}
+
+/* list controls */
+
+.popup-list-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.75rem 1rem 0;
+  font-size: 0.78rem;
+}
+
+.popup-select-all {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--fg-muted);
+}
+
+.popup-sort {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--fg);
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+}
+
+/* grid */
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 0.6rem 1rem;
+  overflow-y: auto;
+  padding-bottom: 0.2rem;
+}
+
+.popup-card {
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--card-bg);
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.popup-card-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.popup-card-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--border);
+}
+
+.popup-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.popup-card-thumb-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--fg-muted);
+}
+
+.popup-card-ext {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.6rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+}
+
+.popup-card-check {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.popup-card-check-selected {
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: transparent;
+}
+
+.popup-card-filename {
+  margin: 0.4rem 0.5rem 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popup-card-meta {
+  margin: 0.1rem 0.5rem 0.5rem;
+  font-size: 0.68rem;
+  color: var(--fg-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* selection bar / footer */
+
+.popup-selection-bar,
+.popup-batch-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.popup-selection-summary {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--fg-muted);
+}
+
+.popup-download-button {
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--accent-gradient);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.popup-download-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.popup-pause-button {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--card-bg);
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.popup-pause-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* empty state */
+
+.popup-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  gap: 0.6rem;
+}
+
+.popup-empty-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.8rem;
+  background: var(--border);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.popup-empty h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.popup-empty p {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.popup-rescan-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--card-bg);
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.popup-shortcut-hint {
+  margin-top: 1.5rem !important;
+  font-size: 0.7rem !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* batch progress view */
+
+.popup-batch-progress {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.popup-batch-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.popup-batch-progress-header p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.popup-batch-percent {
+  color: var(--accent);
+  font-weight: 700 !important;
+}
+
+.popup-progress-track {
+  height: 0.4rem;
+  border-radius: 1rem;
+  background: var(--border);
+  margin-top: 0.6rem;
+  overflow: hidden;
+}
+
+.popup-progress-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  transition: width 0.3s ease;
+}
+
+.popup-batch-bytes {
+  margin: 0.4rem 0 0;
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.popup-batch-list {
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.popup-batch-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.6rem;
+}
+
+.popup-batch-item-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  background: var(--border);
+  color: var(--fg-muted);
+}
+
+.popup-batch-item-icon-done {
+  background: color-mix(in srgb, var(--success) 20%, transparent);
+  color: var(--success);
+}
+
+.popup-batch-item-icon-failed {
+  background: color-mix(in srgb, var(--error) 20%, transparent);
+  color: var(--error);
+}
+
+.popup-batch-item-icon-downloading {
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  animation: popup-spin 0.7s linear infinite;
+}
+
+.popup-batch-item-text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.popup-batch-item-filename {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popup-batch-item-meta {
+  margin: 0.1rem 0 0;
+  font-size: 0.68rem;
+  color: var(--fg-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

@@ -1,0 +1,41 @@
+:root[data-theme='light'] {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --border: #d0d0d0;
+}
+
+:root[data-theme='dark'] {
+  --bg: #1a1a1a;
+  --fg: #f0f0f0;
+  --border: #444444;
+}
+
+body {
+  min-width: 24rem;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.options {
+  padding: 1.5rem;
+}
+
+.options h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.options fieldset {
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.options-radio,
+.options-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+}
